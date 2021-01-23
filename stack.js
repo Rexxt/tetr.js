@@ -93,7 +93,7 @@ Stack.prototype.addPiece = function(piece) {
         timePenalty += 10 * piecesDel;
         if (timePenalty >= 100) {
           gameState = 9;
-          $setText(msg,'RUUAAHHHH!');
+          $setText(msg,'GAME OVER!');
           menu(3);
           sound.playse("gameover");
           break; // may skip line clear, but don't care
@@ -278,13 +278,13 @@ Stack.prototype.addPiece = function(piece) {
         }else if(gameparams.backFire === 4){
           stack.makeSomeArt();
           if(isPC) {
-            $setText(msg,'PAHUEKUTO KURIYAA!');
+            $setText(msg,'PERFECT CLEAR!');
           } else if(isSpin) {
             $setText(msg,'SPINNING!');
           } else if(combo >= 2) {
             $setText(msg,'RAHH COMBO!');
           } else if(lineClear >= 2) {
-            $setText(msg,['DOUBLE!','TRIPLE!','TETR.JS!'][lineClear - 2]);
+            $setText(msg,['DOUBLE!','TRIPLE!','TETRJS!'][lineClear - 2]);
           }
         }
       }
@@ -338,7 +338,7 @@ Stack.prototype.rowRise = function(arrRow, objPiece) {
         // the bottom is >=2 cell away from visible part
         if(gameState !== 9) { // may happen simutanously
           gameState = 9;
-          $setText(msg,'RUUAAAAA!');
+          $setText(msg,'GAME OVER!');
           menu(3);
           sound.playse("gameover");
         }

@@ -1098,10 +1098,10 @@ function gameLoop() {
         if (gameState === 2) {
           // Count Down
           if (frame === 0) {
-            $setText(msg,'各就各位\nREADY');
+            $setText(msg,'READY');
             sound.playse("ready");
           } else if (frame === ~~(fps*5/6)) {
-            $setText(msg,'走着~\nGO!');
+            $setText(msg,'GO!');
             sound.playse("go");
           } else if (frame === ~~(fps*10/6)) {
             $setText(msg,'');
@@ -1273,7 +1273,7 @@ var playername=void 0;
 
 function requireplayername(){
   if(playername===void 0)
-    playername=prompt("Enter your name for leaderboard\n('cancel' = anonymous):\n请输入上榜大名：","");
+    playername=prompt("Enter your name for leaderboard\n('cancel' = anonymous):","");
   if(playername===null)
     playername="anonymous";
   if(playername==="")
